@@ -10,7 +10,7 @@ wb = load_workbook('Shiqmim_Photolog_Final.xlsx')
 ws = wb.get_active_sheet()
 numCols = 12 # Number of fields of metadata
 
-for row in range(2, 1266): # loops through all rows of data
+for row in range(2, 1267): # loops through all rows of data
     name = "L:\Shiqmim Scanned Slides\\" + "19"
     yearRow = ws.cell('A%s'%row).value
     if(yearRow is not None):
@@ -32,6 +32,7 @@ for row in range(2, 1266): # loops through all rows of data
                 name += "_ " + str(curr) # adds square
             if(col == 'G'):
                 name += "L_" + str(curr) # adds locus
+
     name += ".tif"
     ws.cell('L%s'%(row)).value = name # saves file name to cell in column L
 
