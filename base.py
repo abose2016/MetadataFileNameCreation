@@ -25,7 +25,10 @@ for row in range(2, 1267): # loops through all rows of data
             if(col == 'A'):
                 name += year + "\SHQ_" # adds year
             if(col == 'B'):
-                name += year + "_" + curr[3:] # adds notebook location
+                if(len(curr[3:]) < 3 ):
+                    name += year + "_0" + curr[3:]
+                else:
+                    name += year + "_" + curr[3:] # adds notebook location
             if(col == 'E'):
                 name += "_" + str(curr) # adds area
             if(col == 'F'):
