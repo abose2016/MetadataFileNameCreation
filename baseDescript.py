@@ -29,12 +29,8 @@ for row in range(2, 1267): # loops through all rows of data
                     name += year + "_0" + curr[3:]
                 else:
                     name += year + "_" + curr[3:] # adds notebook location
-            if(col == 'E'):
-                name += "_" + str(curr) # adds area
-            if(col == 'F'):
-                name += "_ " + str(curr) # adds square
-            if(col == 'G'):
-                name += "_L" + str(curr) # adds locus
+            if col == 'K':
+                name += "_K_" + curr[:5]
     name += ".tif"
     ws.cell('L%s'%(row)).value = name # saves file name to cell in column L
 
